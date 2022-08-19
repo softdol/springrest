@@ -52,9 +52,9 @@ public class PizzaController {
 			return "redirect:/pizza/list";
 		}
 		
-		//model.addAttribute("pizza", service.updatePizzaForm(id));
+		model.addAttribute("pizza", service.updatePizzaForm(id));
 		
-		return "pizzasub/update";
+		return "pizza/update";
 	}
 	
 	@PostMapping("/update")
@@ -81,15 +81,15 @@ public class PizzaController {
 		
 		return "pizza/info";
 	}
-//	
-//	@GetMapping("/del")
-//	public String del(Integer id) {		
-//		if(!pizzaMapper.delPizza(id)) {
-//			log.info("삭제 실패 : " + id);
-//		}		
-//		return "redirect:/pizza/list";
-//	}
-//	
+	
+	@GetMapping("/del")
+	public String del(Integer id) {		
+		if(service.delPizza(id) < 1) {
+			log.info("삭제 실패 : " + id);
+		}		
+		return "redirect:/pizza/list";
+	}
+	
 	@GetMapping("/view")
 	public String mod(Integer id, Model model) {
 		if(id == 0) {
@@ -107,10 +107,18 @@ public class PizzaController {
 		return "pizza/info";
 	}
 	
-//	@PostMapping("/mod")
-//	public String upt(Pizza pizza) {
-//		pizzaMapper.uptPizza(pizza);
-//		return "redirect:/pizza/list";
-//	}
+	@GetMapping("/mod")
+	public void upt(Integer id, Model model) {
+		model.addAttribute("pizza", service.updatePizzaForm(id));
+		// "redirect:/pizza/list";
+	}
+	
+	@PostMapping("/mod")
+	public String upt(Pizza pizza) {		
+		if(service.uptPizza(pizza) < 1) {
+			log.info("수정 실패 : " + pizza);
+		}
+		return "redirect:/pizza/list";
+	}
 	
 }

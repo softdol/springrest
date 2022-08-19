@@ -11,7 +11,7 @@
 <body>
 	
 <div class="view-padding">
-<form action="./addjson" method="post">
+<form action="./add" method="post">
 	<div class="input-group">
 		<hr />
 	</div>

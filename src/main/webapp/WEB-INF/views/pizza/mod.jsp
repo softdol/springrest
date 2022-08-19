@@ -11,7 +11,7 @@
 <body>
 
 <div class="view-padding">
-<form action="./addjson" method="POST">
+<form action="mod" method="POST">
 	<input type="hidden" name="_method" value="DELETE">
 	<input type="hidden" name="id" value="${pizza.id }" />
 	<div class="input-group">

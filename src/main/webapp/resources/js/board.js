@@ -14,13 +14,13 @@ function fnReWrite(num){
 	const txtReMemo = document.getElementById("txtReMemo");
 	
 	if(txtReMemo.value.length < 1){
-		alert('ë‚´ìš©ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”.');
+		alert('?‚´?š©?„ ?…? ¥?•´ ì£¼ì„¸?š”.');
 		txtReMemo.focus();
 		return;
 	}
 	
 	if(txtReMemo.value.length > 200){
-		alert('200ì ê¹Œì§€ ì…ë ¥ ê°€ëŠ¥ í•©ë‹ˆë‹¤.');
+		alert('200? ê¹Œì?? ?…? ¥ ê°??Š¥ ?•©?‹ˆ?‹¤.');
 		txtReMemo.focus();
 		return;
 	}
@@ -44,7 +44,7 @@ function fnReWrite(num){
 }
 
 function fnConfirm(val, url){
-	if(confirm(val + ' í•˜ì‹œê² ìŠµë‹ˆê¹Œ?')){
+	if(confirm(val + ' ÇÏ½Ã°Ú½À´Ï±î?')){
 		location.href = url;
 	};
 }

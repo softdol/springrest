@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezen.restful.pizza.mapper.PizzaMapper">
+
+	<select id="get" resultType="com.ezen.restful.dto.Pizza">
+    	SELECT * FROM pizza WHERE id = #{id}
+	</select>
+	
+	<update id="updateView">
+    	UPDATE pizza SET calories = calories + 1
+		WHERE id = #{id}
+	</update>
+
+
+	<select id="getAll" resultType="com.ezen.restful.dto.Pizza">
+    	SELECT * FROM pizza ORDER BY id DESC
+	</select>
+	
+	<insert id="add" parameterType="com.ezen.restful.dto.Pizza" >
+    	INSERT into pizza(id,name, price, calories)
+    	VALUES (pizza_id_seq.nextval, #{name}, #{price}, #{calories})
+	</insert>
+	<select id="getIdByName" resultType="int">
+    	SELECT id FROM pizza WHERE name = #{name}
+	</select>
+	
+	<select id="getPizza" resultType="com.ezen.restful.dto.Pizza">
+    	SELECT * FROM pizza WHERE id = #{id}
+	</select>
+	
+	<update id="uptPizza" parameterType="com.ezen.restful.dto.Pizza">
+    	UPDATE pizza SET name = #{name}, price = #{price}, calories = #{calories}
+		WHERE id = #{id}
+	</update>
+	
+	<delete id="delPizza" parameterType="int">
+    	DELETE FROM pizza where id = #{id}
+	</delete>
+	
+	
+</mapper>
+
+
+
+

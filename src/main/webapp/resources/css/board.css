@@ -1,0 +1,12 @@
+.board-title {
+	cursor: pointer;
+}
+
+.view-padding{
+	padding: 50px;
+}
+
+.frm-in-center{
+	 text-align: center;
+	 width:100%;
+}

@@ -53,4 +53,8 @@ public class HomeController {
 		return "ajax";
 	}
 	
+	@RequestMapping(value = "/ajaxtest", method = RequestMethod.GET)
+	public void ajaxtest(Locale locale, Model model) {
+	}
+	
 }
